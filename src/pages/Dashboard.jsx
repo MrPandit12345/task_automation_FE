@@ -22,10 +22,19 @@ export default function Dashboard({ setToken }) {
   };
 
   return (
-    <div className="app">
-      <h1>AutoTasker Pro</h1>
-      <button onClick={logout}>Logout</button>
+    <div className="dashboard-wrapper container py-4">
+      <div className="d-flex justify-content-between align-items-center mb-4">
+        <h2 className="fw-bold mb-0">AutoTasker Pro</h2>
+        <button
+          className="btn btn-outline-danger btn-sm"
+          onClick={logout}
+        >
+          Logout
+        </button>
+      </div>
+
       <TaskForm reload={loadTasks} />
+
       <TaskList tasks={tasks} reload={loadTasks} />
     </div>
   );

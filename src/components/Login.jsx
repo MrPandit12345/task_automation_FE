@@ -13,12 +13,50 @@ export default function Login({ setToken, setShowRegister }) {
   };
 
   return (
-    <form className="card" onSubmit={submit}>
-      <h2>Login</h2>
-      <input placeholder="Email" onChange={e => setEmail(e.target.value)} />
-      <input type="password" placeholder="Password" onChange={e => setPassword(e.target.value)} />
-      <button>Login</button>
-      <p onClick={() => setShowRegister(true)}>Create account</p>
-    </form>
+    <div className="login-wrapper d-flex align-items-center justify-content-center">
+      <div className="card login-card shadow">
+        <div className="card-body">
+          <h3 className="text-center mb-4 fw-bold">Login</h3>
+
+          <form onSubmit={submit}>
+            <div className="mb-3">
+              <label className="form-label">Email address</label>
+              <input
+                type="email"
+                className="form-control"
+                placeholder="Enter email"
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
+            </div>
+
+            <div className="mb-3">
+              <label className="form-label">Password</label>
+              <input
+                type="password"
+                className="form-control"
+                placeholder="Enter password"
+                onChange={(e) => setPassword(e.target.value)}
+                required
+              />
+            </div>
+
+            <button type="submit" className="btn btn-primary w-100">
+              Login
+            </button>
+          </form>
+
+          <p className="text-center mt-3 mb-0">
+            Don’t have an account?{" "}
+            <span
+              className="register-link"
+              onClick={() => setShowRegister(true)}
+            >
+              Create account
+            </span>
+          </p>
+        </div>
+      </div>
+    </div>
   );
 }

@@ -14,12 +14,61 @@ export default function Register({ setShowRegister }) {
   };
 
   return (
-    <form className="card" onSubmit={submit}>
-      <h2>Register</h2>
-      <input placeholder="Name" onChange={e => setName(e.target.value)} />
-      <input placeholder="Email" onChange={e => setEmail(e.target.value)} />
-      <input type="password" placeholder="Password" onChange={e => setPassword(e.target.value)} />
-      <button>Register</button>
-    </form>
+    <div className="register-wrapper d-flex align-items-center justify-content-center">
+      <div className="card register-card shadow">
+        <div className="card-body">
+          <h3 className="text-center mb-4 fw-bold">Create Account</h3>
+
+          <form onSubmit={submit}>
+            <div className="mb-3">
+              <label className="form-label">Full Name</label>
+              <input
+                type="text"
+                className="form-control"
+                placeholder="Enter your name"
+                onChange={(e) => setName(e.target.value)}
+                required
+              />
+            </div>
+
+            <div className="mb-3">
+              <label className="form-label">Email Address</label>
+              <input
+                type="email"
+                className="form-control"
+                placeholder="Enter your email"
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
+            </div>
+
+            <div className="mb-3">
+              <label className="form-label">Password</label>
+              <input
+                type="password"
+                className="form-control"
+                placeholder="Create a password"
+                onChange={(e) => setPassword(e.target.value)}
+                required
+              />
+            </div>
+
+            <button type="submit" className="btn btn-success w-100">
+              Register
+            </button>
+          </form>
+
+          <p className="text-center mt-3 mb-0">
+            Already have an account?{" "}
+            <span
+              className="login-link"
+              onClick={() => setShowRegister(false)}
+            >
+              Login
+            </span>
+          </p>
+        </div>
+      </div>
+    </div>
   );
 }
