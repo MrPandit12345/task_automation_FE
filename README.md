@@ -45,3 +45,6 @@ The current workflow includes:
 3.  **Email Node**
     
     *   Sends a notification email to the user using Zoho SMTP.
+  
+![WorkFlow Screenshot](public/workflow.png)
+
