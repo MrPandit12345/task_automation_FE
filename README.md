@@ -46,5 +46,37 @@ The current workflow includes:
     
     *   Sends a notification email to the user using Zoho SMTP.
   
+## WorkFlow Image
+  
 ![WorkFlow Screenshot](public/workflow.png)
+
+### n8n Setup
+
+1.  Make sure n8n is **self-hosted and running on port 5678**:
+    
+
+`n8n start`
+
+2.  Import the workflow:
+    
+    *   Create a new workflow.
+        
+    *   Add **Webhook → Set → Email Node**.
+        
+    *   Configure **Webhook** to match `N8N_WEBHOOK_URL`.
+        
+    *   Configure **Email Node** using Zoho SMTP credentials.
+        
+
+* * *
+
+## Usage
+
+1.  Create a task from the frontend.
+    
+2.  Mark the task as **completed**.
+    
+3.  Backend sends a POST request to n8n webhook.
+    
+4.  n8n formats the data and sends an **email notification** to the user.
 
