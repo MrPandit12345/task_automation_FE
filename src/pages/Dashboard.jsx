@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import TaskForm from "../components/TaskForm";
 import TaskList from "../components/TaskList";
-import { getTasks } from "../api/task.jsx";
+import { getTasks } from "../api/task.js";
 
 export default function Dashboard({ setToken }) {
   const token = localStorage.getItem("token");
