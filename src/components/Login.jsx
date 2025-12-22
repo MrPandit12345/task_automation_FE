@@ -13,49 +13,54 @@ export default function Login({ setToken, setShowRegister }) {
   };
 
   return (
-    <div className="login-wrapper d-flex align-items-center justify-content-center">
-      <div className="card login-card shadow">
-        <div className="card-body">
-          <h3 className="text-center mb-4 fw-bold">Login</h3>
-
-          <form onSubmit={submit}>
-            <div className="mb-3">
-              <label className="form-label">Email address</label>
-              <input
-                type="email"
-                className="form-control"
-                placeholder="Enter email"
-                onChange={(e) => setEmail(e.target.value)}
-                required
-              />
-            </div>
-
-            <div className="mb-3">
-              <label className="form-label">Password</label>
-              <input
-                type="password"
-                className="form-control"
-                placeholder="Enter password"
-                onChange={(e) => setPassword(e.target.value)}
-                required
-              />
-            </div>
-
-            <button type="submit" className="btn btn-primary w-100">
-              Login
-            </button>
-          </form>
-
-          <p className="text-center mt-3 mb-0">
-            Don’t have an account?{" "}
-            <span
-              className="register-link"
-              onClick={() => setShowRegister(true)}
+    <div className="flex justify-center m-8">
+      <div
+        className="w-fit h-fit bg-indigo-50 rounded shadow flex flex-col justify-between p-3"
+        onSubmit={submit}
+      >
+        <form className="text-indigo-500" action method="post">
+          <fieldset className="border-4 border-dotted border-indigo-500 p-5">
+            <legend className="px-2 italic -mx-2">Welcome again!</legend>
+            <label
+              className="text-xs font-bold after:content-['*'] after:text-red-400"
+              htmlFor="email"
             >
-              Create account
-            </span>
-          </p>
-        </div>
+              Mail{" "}
+            </label>
+            <input
+              className="w-full p-2 mb-2 mt-1 outline-none ring-none focus:ring-2 focus:ring-indigo-500"
+              type="email"
+              placeholder="Enter email"
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+            <label
+              className="text-xs font-bold after:content-['*'] after:text-red-400"
+              htmlFor="password"
+            >
+              Password
+            </label>
+            <input
+              className="w-full p-2 mb-2 mt-1 outline-none ring-none focus:ring-2 focus:ring-indigo-500"
+              type="password"
+              placeholder="Enter password"
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+            <p className="block text-right text-xs text-indigo-500 mb-4">
+              Don’t have an account?{" "}
+              <span
+                className="register-link"
+                onClick={() => setShowRegister(true)}
+              >
+                Create account
+              </span>
+            </p>
+            <button className="w-full rounded bg-indigo-500 text-indigo-50 p-2 text-center font-bold hover:bg-indigo-400">
+              Log In
+            </button>
+          </fieldset>
+        </form>
       </div>
     </div>
   );
