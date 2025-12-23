@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API = "http://localhost:5173/api/tasks";
+const API = "https://task-automation-be.onrender.com/api/tasks";
 
 export const getTasks = (token) =>
   axios.get(API, {

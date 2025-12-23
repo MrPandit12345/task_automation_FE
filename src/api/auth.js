@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API = "http://localhost:5173/api/auth";
+const API = "https://task-automation-be.onrender.com/api/auth";
 
 export const loginUser = (data) =>
   axios.post(`${API}/login`, data);
