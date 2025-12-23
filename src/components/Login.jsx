@@ -47,14 +47,12 @@ export default function Login({ setToken, setShowRegister }) {
               onChange={(e) => setPassword(e.target.value)}
               required
             />
-            <p className="block text-right text-xs text-indigo-500 mb-4">
+            <p
+              className="block text-right text-xs text-indigo-500 mb-4 cursor-pointer"
+              onClick={() => setShowRegister(true)}
+            >
               Don’t have an account?{" "}
-              <span
-                className="register-link"
-                onClick={() => setShowRegister(true)}
-              >
-                Create account
-              </span>
+              <span className="font-semibold px-1">Create account</span>
             </p>
             <button className="w-full rounded bg-indigo-500 text-indigo-50 p-2 text-center font-bold hover:bg-indigo-400">
               Log In
