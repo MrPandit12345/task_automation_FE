@@ -15,7 +15,7 @@ export default function Login({ setToken, setShowRegister }) {
   return (
     <div className="flex justify-center m-8">
       <div
-        className="w-fit h-fit bg-indigo-50 rounded shadow flex flex-col justify-between p-3"
+        className="w-fit h-fit bg-white rounded shadow flex flex-col justify-between p-3"
         onSubmit={submit}
       >
         <form className="text-indigo-500" action method="post">
